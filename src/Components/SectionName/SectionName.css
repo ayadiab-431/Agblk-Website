@@ -1,0 +1,41 @@
+.section-name {
+    padding: 5px 7px 10px 7px;
+    position: relative;
+    white-space: nowrap;
+    margin: 2px auto;
+    width: fit-content;
+}
+.section-name::before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 3px;
+    background-color: var(--green-shade);
+    top: 0;
+    right: 0;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.section-name::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 3px;
+    background-color: var(--green-shade);
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.section-name:hover::before {
+    width: 100%;
+}
+.section-name:hover::after {
+    width: 100%;
+}

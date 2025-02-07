@@ -1,0 +1,10 @@
+.logo {
+    font-family: "DynaPuff", system-ui;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px var(--low-dark);
+    margin: 0 0 0px 5px;
+}
+.logo a {
+    color: var(--green-shade);
+    text-decoration: none;
+}

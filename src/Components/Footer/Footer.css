@@ -1,0 +1,30 @@
+.footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 10px;
+}
+.footer .container a {
+    color: #687c74;
+    text-decoration: none;
+}
+.footer .container a:hover {
+    text-decoration: underline;
+}
+.footer .payment .pay-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.footer .payment .pay-icons a {
+    display: inline-block;
+}
+.footer .payment .pay-icons a img {
+    width: 20px;
+}
+.footer .f-sec,
+.footer .payment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+}

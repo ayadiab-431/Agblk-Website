@@ -1,0 +1,30 @@
+.react-tel-input {
+    display: flex;
+}
+.phone-input-container .form-control {
+    flex: 1;
+}
+.phone-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.phone-input.invalid {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* علشان نخلي الدروب داون ناحية الشمال */
+.react-tel-input .flag-dropdown {
+    direction: ltr;
+    text-align: left;
+    left: 0;
+}

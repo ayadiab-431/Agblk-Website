@@ -1,0 +1,13 @@
+.not-found-image {
+    max-width: 500px;
+    width: 100%;
+    margin: 10px;
+}
+.not-found-container .error-title {
+    margin: 10px;
+}
+.not-found-container .error-desription {
+    margin: 20px 15px;
+    line-height: 1.6;
+    font-weight: 500;
+}

@@ -1,0 +1,46 @@
+:root {
+    --dark: #182727;
+    --low-dark: #3c5148;
+    --green-shade: #688e4e;
+    --light-green: #b2c582;
+    --light: #d5dddf;
+}
+.search-bar {
+    min-width: 25%;
+    display: flex;
+    align-items: center;
+    background-color: var(--light);
+    flex: 1;
+    margin: 0 10px;
+}
+.search-bar input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-right: 15px;
+}
+.search-bar .search-icon {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green-shade);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.search-bar .search-icon:hover {
+    background-color: #4b6838;
+}
+@media (max-width: 767px) {
+    .search-bar {
+        background-color: var(--low-dark);
+        margin: 0;
+    }
+}

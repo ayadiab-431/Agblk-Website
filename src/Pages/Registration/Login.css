@@ -1,0 +1,152 @@
+body.login-body {
+    background-color: var(--light) !important;
+}
+.form-container {
+    padding-top: 30px;
+}
+.form-container .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-container .user-form .form-title {
+    color: white;
+}
+.form-container .user-form {
+    background-color: var(--low-dark);
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    color: var(--light);
+}
+@media (max-width: 767px) {
+    .form-container .user-form {
+        padding: 20px;
+    }
+}
+.form-container .user-form .form-group {
+    margin: 15px;
+}
+.form-container .user-form label {
+    font-weight: 500;
+}
+.form-container .user-form .inp {
+    position: relative;
+}
+.form-container .user-form .inp i {
+    position: absolute;
+    color: var(--low-dark);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.form-container .user-form .inp i:first-of-type {
+    right: 12px;
+}
+.form-container .user-form .inp i.eye {
+    left: 12px;
+}
+.form-container .user-form .inp i.eye:hover {
+    cursor: pointer;
+}
+.form-container .user-form .inp input {
+    padding-right: 35px;
+}
+.form-container .user-form .inp input:focus {
+    border-color: var(--light-green);
+    box-shadow: 0 0 0 .25rem #b2c5828c;
+}
+.user-form .confirm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 15px;
+}
+.user-form .confirm .sign-up-btn {
+    flex: 1;
+}
+.user-form .confirm .forget-password {
+    color: var(--light-green);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.user-form .confirm .forget-password:hover,
+.user-form .no-account a:hover,
+.user-form .policies a:hover {
+    color: var(--dark);
+}
+.user-form .no-account {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    font-weight: 500;
+}
+.user-form .no-account p {
+    margin: 0 0 0 10px;
+}
+.user-form .no-account a {
+    margin-right: 5px;
+    color: var(--light-green);
+}
+.user-form .google-acc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        padding: 10px;
+        margin: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        text-decoration: none;
+}
+.user-form .google-acc:hover {
+    background-color: var(--light);
+}
+.user-form .google-acc .google-img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+.user-form .google-acc .google-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    color: var(--dark);
+}
+.error-msg {
+    color: #f43e3e;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 3px 7px 0 0;
+
+}
+.user-form .policies {
+    margin: 15px 0 0 0;
+    padding: 0 20px;
+}
+.user-form .policies a {
+    color: var(--light);
+}
+.form-container .laws-name {
+    margin: 15px 0 0 0;
+    padding: 15px 0;
+    font-weight: bold;
+    border-top: 1px solid var(--low-dark);
+}
