@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 export default function SubHeader() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(() => {
+        const userData = localStorage.getItem("userData")
+        if (userData) setIsLoggedIn(true)
+    },[])
     return (
         <div className="sub-header">
             <ul className="right-side">
@@ -10,6 +17,7 @@ export default function SubHeader() {
                         example@agblk.com
                         </a>
                 </li>
+                <span>|</span>
                 <li className="phone">
                     <i className="ri-phone-line"></i>
                     <a href="tel:+20156454516">
@@ -17,23 +25,34 @@ export default function SubHeader() {
                         +20156454516</a>
                 </li>
             </ul>
-            <ul className="left-side">
+            {!isLoggedIn && <ul className="left-side">
                 <li>
                     <Link to="/my-stores">متاجري</Link>
                 </li>
+                <span>|</span>
                 <li>
                     <Link to="/create-store">انشاء متجر</Link>
                 </li>
+                <span>|</span>
                 <li>
-                    <Link to="/admin-panel">انشاء متجر</Link>
+                    <Link to="/admin-panel">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    لوحة المسوق</Link>
                 </li>
+                <span>|</span>
                 <li>
                     <Link to="/login">
                         <i className="ri-user-add-line"></i>
                         سجل كمسوق
                     </Link>
                 </li>
-            </ul>
+            </ul>}
+            {isLoggedIn && <div className="my-acc">
+                <Link to="/profile">
+                <i className="fa-regular fa-user"></i>
+                حسابي
+                </Link>
+            </div>}
         </div>
     );
 }

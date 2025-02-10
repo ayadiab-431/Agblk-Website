@@ -1,0 +1,162 @@
+.body-bg {
+    background-color: var(--light);
+}
+.profile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 25px 15px;
+    gap: 50px;
+}
+.profile-wrapper .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.profile-wrapper .sidebar a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 18px;
+}
+.profile-wrapper .sidebar li.active a {
+    color: var(--green-shade);
+}
+.profile-wrapper .sidebar li {
+    padding: 7px 0;
+}
+.profile-wrapper .card {
+    flex: 1;
+}
+.profile-wrapper .card .my-profile {
+    display: flex;
+    flex-direction: column;
+}
+.profile-wrapper .card .my-profile h5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--light);
+}
+.profile-wrapper .profile-content {
+    display: flex;
+    padding: 20px 15px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+.profile-wrapper .profile-content .inf,
+.profile-wrapper .profile-content .update-password {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+.profile-wrapper .profile-content .inf .email-content,
+.profile-wrapper .profile-content .inf .login-inf{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.profile-wrapper .profile-content .inf label,
+.profile-wrapper .profile-content .update-password label {
+    font-weight: bold;
+    font-size: 14px;
+}
+.profile-wrapper .profile-content .inf p,
+.profile-wrapper .profile-content .update-password p {
+    font-weight: 500;
+}
+/* .profile-wrapper .inf,
+.profile-wrapper .update-password {
+    width: calc((100% - 60px) / 2);
+} */
+.profile-wrapper .inf .update-name {
+    padding: 0 40px 40px;
+    border: 1px solid var(--light);
+    border-radius: 10px;
+    width: 100%;
+}
+.profile-wrapper .inf .update-name p,
+.profile-wrapper .profile-content .update-password p {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light);
+}
+.profile-wrapper .inf .form-group,
+.profile-wrapper .update-password .form-group {
+    margin-bottom: 15px;
+}
+.profile-wrapper .inf .form-group label,
+.profile-wrapper .update-password .form-group label {
+    margin-bottom: 10px;
+}
+.profile-wrapper .inf .form-group .inp,
+.profile-wrapper .update-password .form-group .inp {
+    position: relative;
+}
+.profile-wrapper .inf .form-group .inp input,
+.profile-wrapper .profile-content .update-password input {
+    padding-right: 35px;
+    font-weight: 500;
+}
+.profile-wrapper .inf .form-group .inp i,
+.profile-wrapper .update-password .form-group .inp i:first-of-type{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    cursor: pointer;
+}
+.profile-wrapper .inf .form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+.profile-wrapper .update-password .form-group .inp .eye {
+    position: absolute;
+    left: 12px;
+    cursor: pointer;
+}
+.profile-wrapper .profile-content .update-password {
+    padding: 0 40px 40px;
+    border: 1px solid var(--light);
+    border-radius: 10px;
+}
+.profile-wrapper .update-password form {
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .profile-wrapper {
+        flex-direction: column;
+        gap: unset;
+        margin-top: 15px;
+    }
+    .profile-wrapper .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .profile-wrapper .sidebar li {
+        margin: 0 10px;
+    }
+}
+.profile-wrapper .stores-card {
+    flex: 1;
+    background-color: #fff;
+}
+.profile-wrapper .stores-card .stores-inf {
+    display: flex;
+    flex-wrap: wrap;
+}

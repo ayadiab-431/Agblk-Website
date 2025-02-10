@@ -7,16 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ScrollToHash from './Components/ScrollToHash/ScrollToHash.js';
 import NoPageFound from './Pages/other/NoPageFound.js';
 import SignUp from './Pages/Registration/Signup.js';
+import MarketerProfile from './Pages/Profile/MarketerProfile.js';
 function App() {
   return (
       <div className="App">
         <Router basename="/Agblk-Website">
           <ScrollToHash/>
           <Routes>
+              <Route path="*" element={<NoPageFound />} />
               <Route index element={<Home/>} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="*" element={<NoPageFound />} />
+              <Route path="/profile" element={<MarketerProfile />} />
           </Routes>
         </Router>
       </div>

@@ -49,8 +49,8 @@ export default function Login() {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Login successful:', data);
-
-                    navigate('/profile', {replace: true});
+                    localStorage.setItem("userData", JSON.stringify(data));
+                    navigate('/', {replace: true});
                 }
                 else {
                     console.error('Login failed');

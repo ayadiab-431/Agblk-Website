@@ -8,6 +8,9 @@
     --light-green: #b2c582;
     --light: #d5dddf;
 }
+ul {
+    list-style: none;
+}
 /* Sub Header */
 .sub-header {
     display: flex;
@@ -25,17 +28,20 @@
     color: var(--light);
     text-decoration: none;
 }
+.sub-header .hide {
+    padding: 0 7px;
+}
 .sub-header .right-side,
 .sub-header .left-side {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 5px;
     color: var(--light);
 }
 .sub-header .right-side .email,
 .sub-header .left-side li:not(:last-of-type){
-    border-left: 2px solid var(--light);
+    /* border-left: 2px solid var(--light); */
     padding-left: 10px;
 }
 .sub-header .right-side .phone {
@@ -47,18 +53,35 @@
     justify-content: space-between;
     gap: 8px;
 }
+.sub-header .left-side li i {
+    margin-left: 5px;
+}
 .sub-header .left-side li:not(:first-of-type){
     padding-right: 10px;
 }
-@media (max-width:992px) {
+@media (max-width:1030px) {
     .sub-header .hide {
         display: none;
     }
 }
-@media (max-width:801px) {
+@media (max-width:815px) {
     .sub-header{
         justify-content: center;
     }
+}
+@media (max-width: 356px) {
+    .sub-header .right-side {
+        display: none;
+    }
+    .sub-header {
+        justify-content: flex-end;
+    }
+}
+.sub-header .my-acc {
+    padding: 5px 20px;
+}
+.sub-header .my-acc i {
+    padding-left: 5px;
 }
 /* Header */
 .header {
@@ -82,7 +105,7 @@
     width: 330px;
     padding: 0 15px;
 }
-.header .other-links li:not(:last-child) a {
+.header .other-links li a {
     font-family: "Baloo Bhaijaan 2", sans-serif;
     text-decoration: none;
     color: var(--light);
