@@ -36,7 +36,7 @@ export default function SubHeader() {
                 <span>|</span>
                 <li>
                     <Link to="/admin-panel">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>
                     لوحة المسوق</Link>
                 </li>
                 <span>|</span>

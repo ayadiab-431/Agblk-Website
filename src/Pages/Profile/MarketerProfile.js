@@ -9,7 +9,7 @@ export default function MarketerProfile() {
     return localStorage.getItem("activeSection") || "my-acc";
   });
   const userData = JSON.parse(localStorage.getItem("userData") || {});
-
+  const [displayVal, setDisplayVal] = useState(false);
   useEffect(() => {
     document.title = `Agblk | ${pageTitle}`;
     document.body.classList.add("body-bg");
@@ -28,6 +28,12 @@ export default function MarketerProfile() {
     localStorage.setItem("activeSection", section);
   };
 
+  const displayOnClick = () => {
+    setDisplayVal(true)
+  }
+  const closePopUp =  () => {
+    setDisplayVal(false)
+  }
   return (
     <div>
       <Header />
@@ -78,7 +84,7 @@ export default function MarketerProfile() {
                   <div className="form-group">
                       <label htmlFor='name-inp'>الاسم</label>
                       <div className="inp">
-                          <i class="fa-regular fa-user"></i>
+                          <i className="fa-regular fa-user"></i>
                           <input type="text" className="form-control" id="name-inp"
                                   name="name" placeholder="الاسم" value="My Name"></input>
                       </div>
@@ -145,35 +151,83 @@ export default function MarketerProfile() {
 
               </div>
             </div>}
-            {activeSection === "following" && <div className="my-following" id="following">
-              <div className="stores-inf">
-                <div className="card">
-                  <h5>إجمالي الطلبات</h5>
-                  <div></div>
-                </div>
-                <div className="card">
-                  <h5>الطلبات المكتملة</h5>
-                  <div></div>
-                </div>
-                <div className="card">
-                  <h5>الطلبات المكتملة</h5>
-                  <div>
-                    <span>ليس رقم ج.م.</span>
-                  </div>
-                </div>
-                <div className="card">
-                  <h5>العمولات المتاحة</h5>
-                  <div>
-                  <span>ليس رقم ج.م.</span>
-                  </div>
-                </div>
+          {activeSection === "addresses" && <div className="my-addresses" id="addresses">
+            {displayVal && <div className="overlay"></div>}
+            <div className="add-address-wrapper">
+              <Button className="add-address" title="إضافة عنوان جديد" onClick={displayOnClick}/>
+            </div>
+            <div className="new-address-added card">
+              <div className="address-title">
+                <span className="your-name">Aya Diab</span>
+                  <Button className="edit-btn" title="تعديل" />
+                  <Button className="delete-btn" title="حذف"/>
               </div>
-              <h5>المتاجر</h5>
-              <div className="stores">
-
+              <span className="full-add">العنانية,دمياط</span>
+              <span className="your-tel">tel: 01025654</span>
+            </div>
+            <div id="pop-up" className={`pop-up ${displayVal ? "dispaly-pop" : ""}`}>
+              <div className="heading">
+                <h5>عنوان العميل</h5>
+                <i className="fa-solid fa-xmark" onClick={closePopUp}></i>
               </div>
+              <div className="popup-content">
+                <form>
+                  <div className="select-country">
+                    <label>الدولة</label>
+                  <select>
+                    <option selected value="egypt">Egypt</option>
+                  </select>
+                  </div>
+                  
+                  <div className="form-group">
+                      <label htmlFor='email-inp'>البريد الإلكتروني</label>
+                          <input type="email" className="form-control" id="email-inp"
+                                  name="email" placeholder="البريد الإلكتروني الخاص بك" value={userData.email}></input>
+                      </div>
+                  <div className="other-inf">
+                  <div className="form-group">
+                      <label htmlFor='name-inp'>الاسم</label>
+                          <input type="text" className="form-control" id="name-inp"
+                                  name="name" placeholder="الاسم" value="My Name"></input>
+                      </div>
+                      <div className="form-group">
+                      <label>الهاتف</label>
+                      <div className="phone-num">
+                          <span>+93</span>
+                          <input type="text" className="form-control" name="phone-number"></input>
+                      </div>
+                      </div>
+                  </div>
+                  <div className="address">
+                  <label>العنوان</label>
+                    <div className="form-group">
+                          <input type="text" className="form-control"
+                                  name="add1" placeholder="عنوان الشارع"></input>
+                      </div>
+                    <div className="form-group">
+                          <input type="text" className="form-control"
+                                  name="add2" placeholder="عنوان الشارع"></input>
+                      </div>
+                  </div>
+                  <div className="city">
+                  <div className="form-group">
+                      <label htmlFor='city-inp'>المدينة</label>
+                          <input type="text" className="form-control" id="city-inp"
+                                  name="city"></input>
+                      </div>
+                  </div>
+                  <div className="form-btn">
+                  <Button className="cancel-btn" title="إلغاء" onClick={closePopUp}/>
+                  <Button className="save-btn" title="حفظ العنوان" onClick={closePopUp}/>
+                  </div>
+          
+                </form>
+              </div>
+            </div>
+            <div className="success-msg">
+              تم إنشاء العنوان بنجاح
+            </div>
             </div>}
-          {activeSection === "addresses" && <div className="my-addresses" id="addresses">addresses</div>}
           {activeSection === "vouchers" && <div className="my-vouchers" id="vouchers">vouchers</div>}
         </div>
       </div>

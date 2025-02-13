@@ -61,7 +61,7 @@ body.login-body {
 }
 .form-container .user-form .inp input:focus {
     border-color: var(--light-green);
-    box-shadow: 0 0 0 .25rem #b2c5828c;
+    box-shadow: 0 0 7px 3px #b2c5828c;
 }
 .user-form .confirm{
     display: flex;
