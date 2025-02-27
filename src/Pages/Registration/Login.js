@@ -38,31 +38,39 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validateForm()) {
+        if (!validateForm()) return;
             setIsLoading(true)
+            setErrors({})
+            
             try {
-                const response = await fetch('https://jsonplaceholder.typicode.com/posts',
-                    {method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({email, password})
+                const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({email, password}),
                 });
+                
+                const data = await response.json()
+                
                 if (response.ok) {
-                    const data = await response.json();
-                    console.log('Login successful:', data);
-                    localStorage.setItem("userData", JSON.stringify(data));
+                    localStorage.setItem("userData", JSON.stringify({
+                        id: data.id,
+                        email: data.email,
+                        name: ""
+                    }));
                     navigate('/', {replace: true});
                 }
                 else {
-                    console.error('Login failed');
+                    setErrors({general: data.message || "البريد الإلكتروني او كلمة السر غير صحيحة"});
                 }
             }
-                catch (error) {
-                    console.error('Login failed');
-                }
+            catch(error) {
+                setErrors({general: "حدث خطأ أثناء الاتصال بالسيرفر"})
+            }
             finally {
                 setIsLoading(false);
             }
-        }
     };
     useEffect(() => {
         // إضافة كلاس للبودي
@@ -90,18 +98,6 @@ export default function Login() {
                         </div>
                         {errors.email && <span className="error-msg">{errors.email}</span>}
                         </div>
-                        {/* <div className="form-group">
-                            <label htmlFor='password-inp'>كلمة السر</label>
-                            <div className="inp">
-                            <i className="ri-lock-line lock"></i>
-                            <input type={showPassword? 'text' : 'password'} className="form-control" id="password-inp"
-                                name='password' placeholder="كلمة السر الخاصة بك"
-                                value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                            <i className={`fa-regular ${showPassword ? "fa-eye" : "fa-eye-slash"} eye`}
-                            onClick={() => setShowPassword(!showPassword)}></i>
-                            </div>
-                        {errors.password && <span className="error-msg">{errors.password}</span>}
-                        </div> */}
                         <PasswordField
                             label="كلمة السر"
                             value={password}
@@ -115,6 +111,7 @@ export default function Login() {
                             <Button type ='submit' className='confirm-btn'
                                 title="تأكيد" disabled = {isLoading}/>
                         </div>
+                        {errors.general && <span className="error-msg">{errors.general}</span>}
                         <div className="no-account">
                             <p>ليس لديك حساب؟</p>
                             <Link to='/sign-up'>إنشاء حساب</Link>

@@ -7,7 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ScrollToHash from './Components/ScrollToHash/ScrollToHash.js';
 import NoPageFound from './Pages/other/NoPageFound.js';
 import SignUp from './Pages/Registration/Signup.js';
-import MarketerProfile from './Pages/Profile/MarketerProfile.js';
+import MyProfile from './Pages/Profile/UserProfile/UserProfile.js';
+import Following from './Pages/Profile/Following/Following.js';
+import Addresses from './Pages/Profile/Addresses/Addresses.js';
+import Vouchers from './Pages/Profile/Vouchers/Vouchers.js';
 function App() {
   return (
       <div className="App">
@@ -18,7 +21,10 @@ function App() {
               <Route index element={<Home/>} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/profile" element={<MarketerProfile />} />
+              <Route path="/profile" element={<MyProfile />} />
+              <Route path="/following" element={<Following/>} />
+              <Route path="/addresses" element={<Addresses/>} />
+              <Route path="/vouchers" element={<Vouchers/>} />
           </Routes>
         </Router>
       </div>
